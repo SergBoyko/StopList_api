@@ -1,0 +1,2 @@
+class StoplistController < ApplicationController
+end

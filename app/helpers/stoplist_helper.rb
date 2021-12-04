@@ -1,0 +1,2 @@
+module StoplistHelper
+end
