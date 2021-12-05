@@ -3,4 +3,10 @@ Rails.application.routes.draw do
   resources :stoplist
   post 'stoplist/upload', to: 'stoplist#upload'
 
+  namespace 'api' do
+    namespace 'v1' do
+      post 'phone/check', to: 'phone#check'
+    end
+  end
+
 end

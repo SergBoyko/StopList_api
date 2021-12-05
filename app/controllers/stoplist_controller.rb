@@ -1,6 +1,10 @@
 
 class StoplistController < ApplicationController
 
+  def index
+    @phones = Stoplist.all
+  end
+
   def new
     @errors ||= nil
   end
@@ -21,7 +25,7 @@ class StoplistController < ApplicationController
         end
       end
 
-      render 'layouts/upload'
+      render :upload
     else
       @errors = "Bad file format. You need upload only Excel file."
       render :new

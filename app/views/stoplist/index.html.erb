@@ -1,0 +1,6 @@
+<h1>All phones in stop list</h1>
+<% @phones.each do |phone| %>
+  <p><%= phone.phone %></p>
+<% end %>
+
+<%= link_to 'Upload Excel file', action: :new%>
