@@ -1,0 +1,12 @@
+<h1>Phones are added to the stop list:</h1>
+<% @correct_phones.each  do |phone|%>
+  <p><%= phone %></p>
+<% end %>
+
+<br>
+<br>
+<h1>These phones are already in stop list or incorrect</h1>
+
+<% @incorrect_phones.each  do |phone|%>
+  <p><%= phone %></p>
+<% end %>

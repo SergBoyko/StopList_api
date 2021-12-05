@@ -1,0 +1,12 @@
+<% if @errors %>
+<div class="alert alert-danger" role="alert">
+  <%= @errors %>
+</div>
+<% end %>
+<h1>Upload excel file</h1>
+<%= form_with url: :stoplist_upload,  multipart: true do |form| %>
+  <%= file_field_tag :my_file ,:accept => '.xls,.xlsx,.xlsb'%>
+  <br>
+  <br>
+  <%= form.submit 'Upload' %>
+<% end %>
