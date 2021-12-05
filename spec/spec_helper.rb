@@ -19,6 +19,8 @@ RSpec.configure do |config|
   # assertions if you prefer.
 
   require 'shoulda/matchers'
+  require 'rest-client'
+  require 'json'
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
