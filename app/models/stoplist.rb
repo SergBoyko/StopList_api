@@ -1,4 +1,3 @@
 class Stoplist < ApplicationRecord
-  # TODO Make validation by regexp
-  validates :phone, presence: true, length: { maximum: 15 }, uniqueness: true
+  validates :phone, presence: true, length: { maximum: 15 }, uniqueness: true, format: { with: /\A(\+|\d)\d+/, message: "Only phone nomber" }
 end
