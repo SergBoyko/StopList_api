@@ -13,6 +13,8 @@ class StoplistController < ApplicationController
     @my_file = params[:my_file]
     @correct_phones = []
     @incorrect_phones = []
+    # Check that file is attached
+    if params[:my_file]
     # Check that is excel file
     if ['.xls','.xlsx', '.xlsb'].include?(File.extname(@my_file))
       xlsx = Roo::Spreadsheet.open(@my_file.tempfile.path, extension: :xlsx)
@@ -30,7 +32,10 @@ class StoplistController < ApplicationController
       @errors = "Bad file format. You need upload only Excel file."
       render :new
     end
-
+    else
+      @errors = 'You must attach file'
+      render :new
+    end
 
   end
 end
